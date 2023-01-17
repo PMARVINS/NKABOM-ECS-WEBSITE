@@ -1,9 +1,8 @@
 
 
 pipeline{
-	agent {
-		  label 'terraformnode'
-	}
+	agent any
+	
 	stages{
 		stage('clonecode'){
 			steps{
