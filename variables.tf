@@ -103,12 +103,19 @@ variable "frontend_port" {
   type        = string
 }
 
+variable "jenkins_port" {
+  default     = "8080"
+  description = "Port exposed to allow traffic on port 8080 on Jenkins"
+  type        = string
+}
+
 # Security group ingress rule - backend end
 variable "backend_port" {
   default     = "443"
   description = "Port exposed by the docker image to redirect traffic to"
   type        = string
 }
+
 
 /***************************************************ECS-FARGATE***********************************************************/
 variable "fargate_cpu" {
