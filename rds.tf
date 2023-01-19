@@ -9,7 +9,7 @@ resource "aws_db_instance" "postgresql" {
   identifier             = "mydb"
   allocated_storage      = 20
   storage_type           = "gp2"
-  engine                 = "postgresql"
+  engine                 = "postgres"
   engine_version         = "9.6"
   instance_class         = "db.t2.micro"
   db_name                = "nkabom"
