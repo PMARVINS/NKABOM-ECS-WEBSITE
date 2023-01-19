@@ -14,13 +14,6 @@ resource "aws_security_group" "lb" {
   }
   
   ingress {
-    protocol    = "allow Jenkins"
-    from_port   = var.jenkins_port
-    to_port     = var.jenkins_port
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
     protocol    = "tcp"
     from_port   = var.backend_port
     to_port     = var.backend_port
@@ -47,13 +40,6 @@ resource "aws_security_group" "ecs_tasks" {
     from_port       = var.frontend_port
     to_port         = var.frontend_port
     security_groups = [aws_security_group.lb.id] #traffic from Loadbalancer only
-  }
-  
-  ingress {
-    protocol        = "jenkins"
-    from_port       = var.jenkins_port
-    to_port         = var.jenkins_port
-    security_groups = [aws_security_group.lb.id]
   }
   
   ingress {
