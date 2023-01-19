@@ -5,12 +5,12 @@ resource "aws_db_subnet_group" "db_subnet_groups" {
 }
 
 
-resource "aws_db_instance" "postgres" {
+resource "aws_db_instance" "postgresql" {
   identifier             = "mydb"
   allocated_storage      = 20
   storage_type           = "gp2"
-  engine                 = "postgres"
-  engine_version         = "5.2.3"
+  engine                 = "postgresql"
+  engine_version         = "9.6"
   instance_class         = "db.t2.micro"
   db_name                = "nkabom"
   username               = "admin"
